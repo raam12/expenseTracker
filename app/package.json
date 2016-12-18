@@ -1,0 +1,19 @@
+{
+  "name": "expensetracker",
+  "version": "1.0.0",
+  "description": "A single page application that manages daily expenses.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raam12/expenseTracker.git"
+  },
+  "author": "raam12",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raam12/expenseTracker/issues"
+  },
+  "homepage": "https://github.com/raam12/expenseTracker#readme"
+}
