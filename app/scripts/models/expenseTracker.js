@@ -7,12 +7,17 @@ define([
   'use strict';
 
   var ExpenseTrackerModel = Backbone.Model.extend({
-    url: '',
+    url: '/api/add-expense',
 
     initialize: function() {
+      this.expenseDate = new Date();
     },
 
     defaults: {
+      category: '',
+      cost: '',
+      notes: '',
+      date: ''
     },
 
     validate: function(attrs, options) {

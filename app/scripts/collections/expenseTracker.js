@@ -3,7 +3,7 @@
 define([
   'underscore',
   'backbone',
-  'models/ExpenseTracker'
+  'models/expenseTracker'
 ], function (_, Backbone, ExpenseTrackerModel) {
   'use strict';
 

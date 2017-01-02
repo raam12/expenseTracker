@@ -4,29 +4,46 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/add-expense.html'
-], function ($, _, Backbone, tplTest) {
+  'text!templates/add-expense.html',
+  'collections/expenseTracker',
+  'models/expenseTracker'
+], function ($, _, Backbone, tplAddExpenseModal, expenseTracker, expenseModel) {
   'use strict';
 
-  var ExpenseTrackerView = Backbone.View.extend({
-    template: _.template(tplTest),
+  var expenseTrackerView = Backbone.View.extend({
+    template: _.template(tplAddExpenseModal),
 
     events: {
-      'click .testClick': 'alertFunc'
+      'click .js-modal': 'closeModal'
+      'click .js-save': 'saveClick'
     },
 
     initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
+      //_.bind(this, render);
     },
-
-    alertFunc() {
-      console.log(this);
-    }
 
     render: function () {
       this.$el.html(this.template());
+    },
+
+    saveClick: function(event) {
+      var self = this;
+      event.preventDefault();
+      expenseObj = get
+    },
+
+    getValues: function() {
+      return {
+        category: this.$el.find('#category-type option:selected').val();
+        cost: this.$el.find('.expense-cost').val();
+        notes: this.$el.find('.expense-desc').val();
+      }
+    },
+
+    closeModal: function() {
+      this.remove();
     }
   });
 
-  return ExpenseTrackerView;
+  return expenseTrackerView;
 });
